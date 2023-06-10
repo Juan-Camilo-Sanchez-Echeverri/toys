@@ -1,7 +1,7 @@
 
-import peluches from '../img/peluches.jpg'
-import coleccionables from '../img/coleccionables.jpg'
-import mesa from '../img/mesa.jpg'
+import peluches from '../img/peluches.webp'
+import coleccionables from '../img/coleccionables.webp'
+import mesa from '../img/mesa.webp'
 
 export const categories = [
   {
