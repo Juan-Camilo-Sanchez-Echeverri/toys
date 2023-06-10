@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700&display=swap');
+
+
+* {
+  margin: 0;
+  font-family: 'Urbanist', sans-serif;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+
+a{
+  color: black;
+}
+
+button{
+  border:none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  color:black;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button:hover{
+  background-color: teal;
+  color: white;
+}
+
+.contenedor-pagar {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.detalles-pagar {
+  background-color: white;
+  padding: 20px 40px;
+  width: 640px;
+  border-radius: 10px;
+}
