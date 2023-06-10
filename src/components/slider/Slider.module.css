@@ -32,8 +32,8 @@
   padding: 50px;
 }
 
-@media only screen and (max-width: 1535px) {
-  .container{
+@media only screen and (max-width: 1536px) {
+  .container {
     display: none;
   }
-  }
+}
