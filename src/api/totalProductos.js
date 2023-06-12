@@ -11,7 +11,6 @@ const totalProductos = {
       console.error('Error fetching products:', error);
     }
   },
-  // Aquí puedes agregar más métodos para interactuar con la API, como obtener detalles de un producto específico, crear un nuevo producto, etc.
 };
 
 export default totalProductos;

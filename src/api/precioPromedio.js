@@ -14,7 +14,7 @@ const precioPromedio = {
       const promedio = Math.round((sum / response.data.length) * 100) / 100;
       return promedio;
     } catch (error) {
-      console.error('Error fetching products:', error);
+      alert('Error al conectar con  products:', error);
     }
   },
 };

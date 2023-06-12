@@ -1,21 +1,25 @@
 import styles from './dashboard.module.css';
-
 import { useEffect, useState } from 'react';
+
 import totalProductos from '../../api/totalProductos';
 import totalPedidos from '../../api/totalPedidos';
 import precioPromedio from '../../api/precioPromedio';
+import ingresosTotales from '../../api/ingresosTotalesGenerados';
+
 import { TotalProductos } from '../TotalProductos';
 import { TotalPedidos } from '../TotalPedidos';
 import { PrecioPromedio } from '../PrecioPromedio';
 import { IngresosTotalesGenerados } from '../IngresosTotalesGenerados';
 import { ProductosMasVendidos } from '../ProductosMasVendidos';
-import ingresos from '../../api/IngresosTotalesGenerados';
 
 
 export const Dashboard = () => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalOrders, setTotalOrders] = useState(0);
   const [promedio, setPromedio] = useState(0);
+  const [totalIngresos, setTotalIngresos] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -33,20 +37,32 @@ export const Dashboard = () => {
       setPromedio(data);
     };
 
+    const fetchIngresos = async () => {
+      const data = await ingresosTotales.getIngresos();
+      setIsLoading(false);
+      setTotalIngresos(data);
+    };
+
     fetchProducts();
     fetchOrdes();
     fetchPromedio();
-    
-    ingresos.getIngresos();
+    fetchIngresos();
+
   }, []);
 
   return (
     <div className={styles.container}>
-      <TotalProductos totalProductos={totalProducts} />
-      <TotalPedidos totalPedidos={totalOrders} />
-      <PrecioPromedio precioPromedio={promedio} />
-      <IngresosTotalesGenerados />
-      <ProductosMasVendidos />
+      {isLoading ? (
+        <p>Cargando...</p>
+      ) : (
+        <>
+          <TotalProductos totalProductos={totalProducts} />
+          <TotalPedidos totalPedidos={totalOrders} />
+          <PrecioPromedio precioPromedio={promedio} />
+          <IngresosTotalesGenerados ingresos={totalIngresos} />
+          <ProductosMasVendidos />
+        </>
+      )}
     </div>
   );
 };

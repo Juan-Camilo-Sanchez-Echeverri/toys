@@ -1,7 +1,5 @@
-
-
-export const IngresosTotalesGenerados = () => {
+export const IngresosTotalesGenerados = ({ingresos}) => {
   return (
-    <div>IngresosTotalesGenerados</div>
+    <div>IngresosTotalesGenerados : {ingresos}</div>
   )
 }
