@@ -61,21 +61,19 @@ export const Dashboard = () => {
   return (
     <>
       <Navegacion />
-
-      <div className={styles.container}>
+      <>
         {isLoading ? (
           <p>Cargando...</p>
         ) : (
-          <>
+          <div className={styles.container}>
             <TotalProductos totalProductos={totalProducts} />
             <TotalPedidos totalPedidos={totalOrders} />
             <PrecioPromedio precioPromedio={promedio} />
             <IngresosTotalesGenerados ingresos={totalIngresos} />
             <ProductosMasVendidos productosMasVendidos={productTotals} />
-          </>
+          </div>
         )}
-      </div>
-      
+      </>
       <Footer />
     </>
   );

@@ -1,13 +1,14 @@
-.container{
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
+.container {
+  display: flex;
+  flex-wrap: wrap;
   padding: 10px;
-  margin: 10px;
+  margin-top: 10px;
+  gap: 30px;
 }
 
-@media screen and (max-width: 600px) {
-  .container{
-    grid-template-columns: 1fr;
-    gap: 30px;
+@media screen and (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 6fr);
   }
 }

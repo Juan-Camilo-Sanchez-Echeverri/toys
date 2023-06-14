@@ -1,6 +1,8 @@
-
-export const TotalPedidos = ({totalPedidos}) => {
+export const TotalPedidos = ({ totalPedidos }) => {
   return (
-    <div>TotalPedidos : {totalPedidos}</div>
-  )
-}
+    <div className="containerInfo">
+      <h2>Total Pedidos </h2>
+      <p>{totalPedidos}</p>
+    </div>
+  );
+};

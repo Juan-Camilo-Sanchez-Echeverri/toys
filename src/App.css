@@ -55,3 +55,34 @@ a {
   margin: 20px 0;
   border-radius: 6px;
 }
+
+
+.containerInfo {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.containerInfo h2 {
+  padding: 30px 0;
+}
+
+.containerInfo p {
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .containerInfo {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .containerInfo {
+    width: 72%;
+    margin: auto;
+    padding: auto;
+  }
+}

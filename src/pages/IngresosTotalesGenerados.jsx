@@ -1,5 +1,10 @@
-export const IngresosTotalesGenerados = ({ingresos}) => {
+export const IngresosTotalesGenerados = ({ ingresos }) => {
   return (
-    <div>IngresosTotalesGenerados : {ingresos}</div>
-  )
-}
+    <div className="containerInfo">
+      <h2>Ingresos 
+        Totales 
+        Generados</h2>
+      <p> $ {ingresos}</p>
+    </div>
+  );
+};

@@ -1,5 +1,8 @@
-export const TotalProductos = ({totalProductos}) => {
+export const TotalProductos = ({ totalProductos }) => {
   return (
-    <p>Total de productos: {totalProductos}</p>
-  )
-}
+    <div className="containerInfo">
+      <h2>Total de productos </h2>
+      <p>{totalProductos}</p>
+    </div>
+  );
+};
