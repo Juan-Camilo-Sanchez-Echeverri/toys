@@ -62,6 +62,7 @@ export const Dashboard = () => {
     <>
       {isLoading ? (
         <div className="contenedor-spinner">
+          <Navegacion />
           <div className="spinner">
             <ClipLoader color="#36d7b7" loading size={100} />
           </div>
