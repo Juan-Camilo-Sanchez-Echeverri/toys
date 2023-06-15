@@ -1,5 +1,5 @@
-
 import { useEffect, useState } from 'react';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 import totalProductos from '../api/totalProductos';
 import totalPedidos from '../api/totalPedidos';
@@ -60,11 +60,15 @@ export const Dashboard = () => {
 
   return (
     <>
-      <Navegacion />
-      <>
-        {isLoading ? (
-          <p>Cargando...</p>
-        ) : (
+      {isLoading ? (
+        <div className="contenedor-spinner">
+          <div className="spinner">
+            <ClipLoader color="#36d7b7" loading size={100} />
+          </div>
+        </div>
+      ) : (
+        <>
+          <Navegacion />
           <div className="container-dashboard">
             <TotalProductos totalProductos={totalProducts} />
             <TotalPedidos totalPedidos={totalOrders} />
@@ -72,9 +76,9 @@ export const Dashboard = () => {
             <IngresosTotalesGenerados ingresos={totalIngresos} />
             <ProductosMasVendidos productosMasVendidos={productTotals} />
           </div>
-        )}
-      </>
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   );
 };
