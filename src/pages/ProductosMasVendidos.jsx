@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 
 import { Line } from 'react-chartjs-2';
+import { TablaMasVendidos } from './TablaMasVendidos';
 
 ChartJS.register(
   CategoryScale,
@@ -25,7 +26,6 @@ ChartJS.register(
 
 export const ProductosMasVendidos = ({ productosMasVendidos }) => {
   const productIds = productosMasVendidos.map((item) => item.productId);
-  const productName = productosMasVendidos.map((item) => item.productName);
   const quantities = productosMasVendidos.map((item) => item.quantity);
 
   const options = {
@@ -36,18 +36,15 @@ export const ProductosMasVendidos = ({ productosMasVendidos }) => {
     labels: productIds,
     datasets: [
       {
-        label: 'PRODUCTOS MAS VENDIDOS',
+        label: 'PRODUCTO MAS VENDIDO',
         data: quantities,
         fill: false,
-        borderColor: generateRandomColors(productName),
-
-        backgroundColor: generateRandomColors(productName),
-        hoverBackgroundColor: generateRandomColors(productName),
+        backgroundColor: generateRandomColors(productIds.length),
+        hoverBackgroundColor: generateRandomColors(productIds.length),
       },
     ],
   };
 
-  // Función para generar colores aleatorios para el gráfico
   function generateRandomColors(length) {
     const colors = [];
     for (let i = 0; i < length; i++) {
@@ -65,10 +62,16 @@ export const ProductosMasVendidos = ({ productosMasVendidos }) => {
     }
     return color;
   }
+
   return (
-    <div className="containerInfo">
-      <h2>Productos Mas vendidos</h2>
-      <Line data={chartData} options={options} />
-    </div>
+    <>
+      <div className="container-info">
+      <h2 className="text-center">Productos Mas vendidos</h2>
+        <Line data={chartData} options={options} />
+      </div>
+      <div className="container-table">
+        <TablaMasVendidos productosMasVendidos={productosMasVendidos} />
+      </div>
+    </>
   );
 };

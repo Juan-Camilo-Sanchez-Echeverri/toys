@@ -1,20 +1,20 @@
-import styles from './dashboard.module.css';
+
 import { useEffect, useState } from 'react';
 
-import totalProductos from '../../api/totalProductos';
-import totalPedidos from '../../api/totalPedidos';
-import precioPromedio from '../../api/precioPromedio';
-import ingresosTotales from '../../api/ingresosTotales';
-import masVendidos from '../../api/masVendidos';
+import totalProductos from '../api/totalProductos';
+import totalPedidos from '../api/totalPedidos';
+import precioPromedio from '../api/precioPromedio';
+import ingresosTotales from '../api/ingresosTotales';
+import masVendidos from '../api/masVendidos';
 
-import { TotalProductos } from '../TotalProductos';
-import { TotalPedidos } from '../TotalPedidos';
-import { PrecioPromedio } from '../PrecioPromedio';
-import { IngresosTotalesGenerados } from '../IngresosTotalesGenerados';
-import { ProductosMasVendidos } from '../ProductosMasVendidos';
+import { TotalProductos } from './TotalProductos';
+import { TotalPedidos } from './TotalPedidos';
+import { PrecioPromedio } from './PrecioPromedio';
+import { IngresosTotalesGenerados } from './IngresosTotalesGenerados';
+import { ProductosMasVendidos } from './ProductosMasVendidos';
 
-import Navegacion from '../../components/navegacion/Navegacion';
-import Footer from '../../components/footer/Footer';
+import Navegacion from '../components/navegacion/Navegacion';
+import Footer from '../components/footer/Footer';
 
 export const Dashboard = () => {
   const [totalProducts, setTotalProducts] = useState(0);
@@ -65,7 +65,7 @@ export const Dashboard = () => {
         {isLoading ? (
           <p>Cargando...</p>
         ) : (
-          <div className={styles.container}>
+          <div className="container-dashboard">
             <TotalProductos totalProductos={totalProducts} />
             <TotalPedidos totalPedidos={totalOrders} />
             <PrecioPromedio precioPromedio={promedio} />

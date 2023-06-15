@@ -56,6 +56,8 @@ const masVendidos = {
 
       productTotalsArray.sort((a, b) => b.quantity - a.quantity);
 
+      productTotalsArray.splice(3, productTotalsArray.length - 3);
+
       return productTotalsArray;
     }
     return productosMasVendidos();

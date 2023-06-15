@@ -1,6 +1,6 @@
 export const IngresosTotalesGenerados = ({ ingresos }) => {
   return (
-    <div className="containerInfo">
+    <div className="container-info">
       <h2>Ingresos 
         Totales 
         Generados</h2>
